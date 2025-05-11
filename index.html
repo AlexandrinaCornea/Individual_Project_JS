@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyBookTracker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      background-image: url("./Assets/Cloudy.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .main-panel {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .main-panel h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .main-panel p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .main-panel button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Acasă</a></li>
+      <li><a href="./Pages/AddBookPage/AddBook.html">Adaugă Carte</a></li>
+      <li><a href="./Pages/StatisticsPage/Statistics.html">Statistici</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-panel">
+    <h2>Vrei să adaugi o carte citită în biblioteca ta?</h2>
+    <p>
+      MyBookTracker te ajută să îți organizezi biblioteca personală, să îți monitorizezi cărțile citite și să îți setezi obiective de lectură.
+    </p>
+      <button onclick="location.href='./Pages/AddBookPage/AddBook.html'">Da, adaugă o carte!</button>
+  </div>
+
+  <footer>
+    <p style="text-align: center; margin-top: 20px;">&copy; <span id="year"></span> MyBookTracker. Toate drepturile rezervate.</p>
+  </footer>
+
+</body>
+</html>
