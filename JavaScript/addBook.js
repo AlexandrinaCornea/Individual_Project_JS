@@ -69,7 +69,7 @@ const addBook = () => {
 
     if (!regexTitle.test(title)) {
         const titleError = document.createElement("p")
-        titleError.innerText = "Titlulul trebuie sa inceapa cu litera mare"
+        titleError.innerText = "Titlul trebuie să înceapă cu literă mare."
         titleError.className = "error"
         bookTitle.insertAdjacentElement("afterend", titleError)
         isValid = false
@@ -77,7 +77,7 @@ const addBook = () => {
 
     if (!regexAuthor.test(author)) {
         const authorError = document.createElement("p")
-        authorError.innerText = "Numele autorului trebuie sa inceapa cu litera mare"
+        authorError.innerText = "Autorul trebuie să aibă nume si prenume sau initiale, ambele cu literă mare."
         authorError.className = "error"
         bookAuthor.insertAdjacentElement("afterend", authorError)
         isValid = false
@@ -85,7 +85,7 @@ const addBook = () => {
 
     if (!regexGenre.test(genre)) {
         const genreError = document.createElement("p")
-        genreError.innerText = "Genul trebuie sa inceapa cu litera mare"
+        genreError.innerText = "Genul trebuie să înceapă cu literă mare."
         genreError.className = "error"
         bookGenre.insertAdjacentElement("afterend", genreError)
         isValid = false
@@ -93,7 +93,7 @@ const addBook = () => {
 
     if (!regexPages.test(pages)) {
         const pagesError = document.createElement("p")
-        pagesError.innerText = "Numarul de pagini trebuie sa fie un numar pozitiv"
+        pagesError.innerText = "Pagini: număr întreg pozitiv."
         pagesError.className = "error"
         bookNrPages.insertAdjacentElement("afterend", pagesError)
         isValid = false
