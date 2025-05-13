@@ -4,33 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adauga Carte</title>
-    <link rel="stylesheet" href="addBook.css">
+    <link rel="stylesheet" href="../CSS/addBook.css">
+    <link rel="stylesheet" href="../CSS/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet"/>
 </head>
 <body>
-    <nav>
-    <div class="nav-header">
-      <h1>MyBookTracker</h1>
-      <button class="menu-toggle" aria-label="Deschide meniul">&#9776;</button>
-    </div>
-    <ul class="dropdown">
-      <li><a href="../../index.html">Acasă</a></li>
-      <li><a href="./AddBook.html">Adaugă Carte</a></li>
-      <li><a href="../StatisticsPage/Statistics.html">Cărțile citite</a></li>
-    </ul>
-  </nav>
+  <div id="nav"></div>
 
   <div class="form">
     <h2>Adaugă o carte</h2>
       <input type="file" accept="image/*" id="coverImage" name="coverImage" required>
       
       <label for="title">Titlu:</label>
-      <input type="text" id="title" name="title" required>
+      <input type="text" id="title" name="title">
 
       <label for="author">Autor:</label>
-      <input type="text" id="author" name="author" required>
+      <input type="text" id="author" name="author">
 
       <label for="genre">Gen:</label>
       <input type="text" id="genre" name="genre">
@@ -63,15 +54,13 @@
               Rating is: 0/5
           </h3>
     </div>
-
       <button id="add-btn">Adaugă</button>
   </div>
 
+  <div id="footer"></div>
 
-  <footer>
-    &copy; <span id="year"></span> MyBookTracker. Toate drepturile rezervate.
-  </footer>
-
-    <script src="addBook.js"></script>
+    <script src="../JavaScript/addBook.js"></script>
+    <script src="../JavaScript/Nav.js"></script>
+    <script src="../JavaScript/Footer.js"></script>
 </body>
 </html>

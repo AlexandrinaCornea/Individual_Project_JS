@@ -7,20 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../CSS/main.css">
 </head>
 <body>
-  <nav>
-    <div class="nav-header">
-      <h1>MyBookTracker</h1>
-      <button class="menu-toggle" aria-label="Deschide meniul">&#9776;</button>
-    </div>
-    <ul class="dropdown">
-      <li><a href="index.html">Acasă</a></li>
-      <li><a href="./Pages/AddBookPage/AddBook.html">Adaugă Carte</a></li>
-      <li><a href="./Pages/StatisticsPage/Statistics.html">Cărțile citite</a></li>
-    </ul>
-  </nav>
+  <div id="nav"></div>
 
   <div class="container">
     <div class="main-panel">
@@ -28,15 +18,15 @@
       <p>
         „MyBookTracker” este aplicația perfectă pentru pasionații de lectură care vor să își organizeze biblioteca personală într-un mod inteligent și accesibil. Cu ajutorul acesteia, poți înregistra cărțile citite, adăuga impresii, evalua lectura și urmări progresul în timp real. Totul într-un singur loc — simplu, ordonat și mereu la îndemână.
       </p>
-      <button onclick="location.href='./Pages/AddBookPage/AddBook.html'">Da, adaugă o carte!</button>
+      <button onclick="location.href='./AddBook.html'">Da, adaugă o carte!</button>
     </div>
-    <img src="./Assets/carteNav.png" alt="Carte decorativă">
+    <img src="../Assets/carteNav.png" alt="Carte decorativă">
   </div>
 
-  <footer>
-    &copy; <span id="year"></span> MyBookTracker. Toate drepturile rezervate.
-  </footer>
+  <div id="footer"></div>
 
   <script src="script.js"></script>
+  <script src="../JavaScript/Nav.js"></script>
+  <script src="../JavaScript/Footer.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
       background-color: #f0f0f0;
       margin: 0;
       padding: 0;
-      background-image: url("../../Assets/Cloudy.svg");
+      background-image: url("../Assets/Cloudy.svg");
       background-repeat: no-repeat;
       background-size: cover;
       min-height: 100vh;
@@ -133,97 +133,11 @@
       height: auto;
     }
 
-    .form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: var(--secondary-color);
-    width: 30%;
-    margin: 100px auto;
-    padding: 30px;
-    }
-
-    .form input[type="text"],
-    .form input[type="number"],
-    .form input[type="file"],
-    .form textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid var(--main-color);
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    .form input[type="text"]:focus,
-    .form input[type="number"]:focus,
-    .form input[type="file"]:focus,
-    .form textarea:focus {
-      border-color: var(--tertiary-color);
-      box-shadow: 0 5px 5px var(--primary-color);
-      outline: none;
-    }
-
-    .rating-card {
-      display: flex;
-      max-width: 33rem;
-      background: #fff;
-      padding: 1rem;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      border-radius: 0.5rem;
-      height: 50px;
-      align-items: center;
-      justify-content: space-between;
-      margin: 0 auto;
-    }
-
-    .star {
-      font-size: 30px;
-      cursor: pointer;
-    }
-
-    .one {
-      color: rgb(255, 0, 0);
-    }
-
-    .two {
-      color: rgb(255, 106, 0);
-    }
-
-    .three {
-      color: rgb(251, 255, 120);
-    }
-
-    .four {
-      color: rgb(255, 255, 0);
-    }
-
-    .five {
-      color: rgb(24, 159, 14);
-    }
-
-    #add-btn {
-      background-color: var(--main-color);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    #add-btn:hover {
-      background-color: var(--tertiary-color);
-    }
-
     footer {
       background-color: var(--tertiary-color);
       color: white;
       padding: 20px 0;
       text-align: center;
-      position: relative;
-      bottom: 0;
     }
 
     @media screen and (max-width: 768px) {
