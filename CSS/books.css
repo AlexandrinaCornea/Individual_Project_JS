@@ -1,0 +1,29 @@
+#filter {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#books-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: bisque;
+    width: 100%;
+    padding: 20px;
+    height: fit-content;
+}
+
+.book-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 15px;
+    max-width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}

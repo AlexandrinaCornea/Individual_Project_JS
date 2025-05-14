@@ -8,7 +8,7 @@ let stars = document.getElementsByClassName("star")
 let output = document.getElementById("output")
 const addBookBtn = document.getElementById("add-btn")
 
-let books = []
+let books = JSON.parse(localStorage.getItem("books")) || []
 let n = 0
 
 const regexTitle = /^[A-ZȘȚĂÎÂ][a-zșțăîâA-ZȘȚĂÎÂ0-9'’"!?.,:;()\-\s]{1,99}$/
@@ -21,6 +21,7 @@ const gfg = (num) => {
     remove()
     n = num
     for (let i = 0; i < num; i++) {
+        let cls = "";
         if (num == 1) cls = "one"
         else if (num == 2) cls = "two"
         else if (num == 3) cls = "three"
@@ -46,12 +47,12 @@ const addBook = () => {
     let pages = bookNrPages.value
     let description = bookDescription.value
     let rating = n
-    let cover = coverImage.value
+    let file = coverImage.files[0]
     let isValid = true
 
     document.querySelectorAll(".error").forEach(e => e.remove())
 
-    if (cover === "" || title === "" || author === "" || genre === "" || pages === "" || description === "") {
+    if (!file || title === "" || author === "" || genre === "" || pages === "" || description === "") {
         const emptyError = document.createElement("p")
         emptyError.innerText = "Toate campurile sunt obligatorii"
         emptyError.className = "error"
@@ -59,7 +60,7 @@ const addBook = () => {
         isValid = false
     }
 
-    if (cover === "") {
+    if (!file) {
         const coverError = document.createElement("p")
         coverError.innerText = "Adaugati o imagine"
         coverError.className = "error"
@@ -106,27 +107,70 @@ const addBook = () => {
         bookDescription.insertAdjacentElement("afterend", descriptionError)
         isValid = false
     }
-
-    if (isValid) {
-        const book = {title, author, genre, pages, description, rating, cover}
-
-        const alreadyExists = books.some(b => 
-            b.title.toLowerCase() === title.toLowerCase().trim() &&
-            b.author.toLowerCase() === author.toLowerCase().trim()
-        )
-
-        if (alreadyExists) {
-            const existsError = document.createElement("p")
-            existsError.innerText = "Cartea exista deja in lista"
-            existsError.className = "error"
-            bookDescription.insertAdjacentElement("afterend", existsError)
-            return
-        }
-
-        books.push(book)
-        localStorage.setItem("books", JSON.stringify(books))
+    if (rating === 0) {
+        const ratingError = document.createElement("p")
+        ratingError.innerText = "Rating-ul trebuie să fie între 1 și 5"
+        ratingError.className = "error"
+        addBookBtn.insertAdjacentElement("beforebegin", ratingError)
+        isValid = false
     }
 
+    if (!isValid) return
+
+    const reader = new FileReader()
+    reader.onload = function() {
+        const img = new Image()
+        img.src = reader.result
+
+        img.onload = function() {
+            const canvas = document.createElement('canvas')
+            const ctx = canvas.getContext('2d')
+
+            const maxWidth = 500
+            const scale = maxWidth / img.width
+            canvas.width = maxWidth
+            canvas.height = img.height * scale
+
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+
+            const compressedImage = canvas.toDataURL('image/jpeg', 0.7) 
+
+            const book = { title, author, genre, pages, description, rating, compressedImage }
+
+            const alreadyExists = books.some(b =>
+                b.title.toLowerCase() === title.toLowerCase() &&
+                b.author.toLowerCase() === author.toLowerCase()
+            )
+
+            if (alreadyExists) {
+                const existsError = document.createElement("p")
+                existsError.innerText = "Cartea există deja în listă"
+                existsError.className = "error"
+                bookDescription.insertAdjacentElement("afterend", existsError)
+                return
+            }
+
+            books.push(book)
+            localStorage.setItem("books", JSON.stringify(books))
+
+            const success = document.createElement("p")
+            success.innerText = "Cartea a fost adăugată cu succes!"
+            success.className = "success"
+            bookDescription.insertAdjacentElement("afterend", success)
+            setTimeout(() => success.remove(), 3000)
+
+            bookTitle.value = ""
+            bookAuthor.value = ""
+            bookGenre.value = ""
+            bookNrPages.value = ""
+            bookDescription.value = ""
+            coverImage.value = ""
+            remove()
+            output.innerText = ""
+        }
+    }
+
+    reader.readAsDataURL(file)
 }
 
 addBookBtn.addEventListener("click", addBook)

@@ -8,7 +8,7 @@ const navbarDisplay = () => {
     <ul class="dropdown">
       <li><a href="./App.html">Acasă</a></li>
       <li><a href="./AddBook.html">Adaugă Carte</a></li>
-      <li><a href="./Statistics.html">Cărțile citite</a></li>
+      <li><a href="./Books.html">Cărțile citite</a></li>
     </ul>
   </nav>
     `

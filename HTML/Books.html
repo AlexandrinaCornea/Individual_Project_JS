@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartile citite</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="../CSS/books.css">
+</head>
+<body>
+    <div id="nav"></div>
+
+    <input type="text" id="search-input" placeholder="Titlu sau autor" />
+    <div id="filter">
+        <select id="filter-genre">
+            <option value="">Toate genurile</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Poezie">Poezie</option>
+        </select>
+        <select id="filter-rating">
+            <option value="0">Toate ratingurile</option>
+            <option value="5">5 stele</option>
+            <option value="4">4+ stele</option>
+            <option value="3">3+ stele</option>
+            <option value="2">2+ stele</option>
+            <option value="1">1+ stele</option>
+        </select>
+        <input type="number" id="max-pages" placeholder="Max pagini" />
+        <button id="apply-filters">Filtrează</button>
+    </div>
+    <div id="books-container"></div>
+
+    <!-- <div id="footer"></div> -->
+    <script src="../JavaScript/Books.js"></script>
+    <script src="../JavaScript/Nav.js"></script>
+    <script src="../JavaScript/Footer.js"></script>
+</body>
+</html>
