@@ -2,7 +2,7 @@ const navbarDisplay = () => {
     return`
     <nav>
     <div class="nav-header">
-      <h1>MyBookTracker</h1>
+      <h1><a href="./App.html">MyBookTracker</a></h1>
       <button class="menu-toggle" aria-label="Deschide meniul">&#9776;</button>
     </div>
     <ul class="dropdown">

@@ -4,7 +4,7 @@
   gap: 8px;
   background-color: var(--secondary-color);
   width: 40%;
-  margin: 100px auto;
+  margin: 50px auto;
   padding: 30px;
 }
 .error {
@@ -16,6 +16,7 @@
 .form input[type="text"],
 .form input[type="number"],
 .form input[type="file"],
+.form select,
 .form textarea {
   width: 100%;
   padding: 10px;
@@ -87,3 +88,19 @@
   background-color: var(--tertiary-color);
 }
 
+@media screen and (max-width: 1000px) {
+  .form {
+    width: 90%;
+  }
+  .star {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .form {
+    width: 100%;
+  }
+  .star {
+    font-size: 20px;
+  }
+}

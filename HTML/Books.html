@@ -1,45 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cartile citite</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/books.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/main.css" />
+    <link rel="stylesheet" href="../CSS/books.css" />
+  </head>
+  <body>
     <div id="nav"></div>
 
     <input type="text" id="search-input" placeholder="Titlu sau autor" />
     <div id="filter">
-        <select id="filter-genre">
-            <option value="">Toate genurile</option>
-            <option value="Fictiune">Fictiune</option>
-            <option value="Roman">Roman</option>
-        </select>
-        <select id="filter-rating">
-            <option value="0">Toate ratingurile</option>
-            <option value="5">5 stele</option>
-            <option value="4">4+ stele</option>
-            <option value="3">3+ stele</option>
-            <option value="2">2+ stele</option>
-            <option value="1">1+ stele</option>
-        </select>
-        <input type="number" id="max-pages" placeholder="Max pagini" />
-        <button id="apply-filters">Filtrează</button>
+      <select id="filter-genre">
+        <option value="">Toate genurile</option>
+        <option value="Ficțiune">Ficțiune</option>
+        <option value="Romantică">Romantică</option>
+        <option value="Biografie">Biografie</option>
+        <option value="Aventura">Aventura</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Science Fiction">Science Fiction</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Detectiv">Detectiv</option>
+        <option value="Horror">Horror</option>
+        <option value="Mister">Mister</option>
+        <option value="Poezie">Poezie</option>
+        <option value="Psihologie">Psihologie</option>
+        <option value="Dezvoltare personală">Dezvoltare personală</option>
+        <option value="Religie și spiritualitate">
+          Religie și spiritualitate
+        </option>
+        <option value="Filozofie">Filozofie</option>
+        <option value="Știință">Știință</option>
+        <option value="Tehnologie">Tehnologie</option>
+        <option value="Politică">Politică</option>
+        <option value="Economie">Economie</option>
+        <option value="Educație">Educație</option>
+        <option value="Umor">Umor</option>
+        <option value="Literatură clasică">Literatură clasică</option>
+        <option value="Young Adult">Young Adult</option>
+        <option value="Copii">Copii</option>
+        <option value="Non-ficțiune">Non-ficțiune</option>
+        <option value="Jurnal">Jurnal</option>
+        <option value="Altele">Altele</option>
+      </select>
+      <select id="filter-rating">
+        <option value="0">Toate ratingurile</option>
+        <option value="5">5 stele</option>
+        <option value="4">4+ stele</option>
+        <option value="3">3+ stele</option>
+        <option value="2">2+ stele</option>
+        <option value="1">1+ stele</option>
+      </select>
+      <input type="number" id="max-pages" placeholder="Max pagini" />
+      <button id="apply-filters">Filtrează</button>
     </div>
     <div id="books-container"></div>
 
     <div id="chart-container">
-        <canvas id="myChart"></canvas>
+      <canvas id="myChart"></canvas>
     </div>
 
-    <div id="footer"></div>
-    
+
     <script src="../JavaScript/Books.js"></script>
     <script src="../JavaScript/Nav.js"></script>
-    <script src="../JavaScript/Footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</body>
+  </body>
 </html>
