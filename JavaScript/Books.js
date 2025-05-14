@@ -1,5 +1,7 @@
 const searchInput = document.getElementById("search-input")
 const booksContainer = document.getElementById("books-container")
+const filterBtn = document.getElementById("apply-filters")
+
 let books = JSON.parse(localStorage.getItem("books")) || []
 
 const deleteBook = (index) => {
@@ -48,4 +50,54 @@ searchInput.addEventListener("input", () => {
     displayBooks(filteredBooks)
 })
 
+const filterBooks = () => {
+    const genreFilter = document.getElementById("filter-genre").value.trim().toLowerCase();
+    const ratingFilter = document.getElementById("filter-rating").value;
+    const maxPagesFilter = document.getElementById("max-pages").value.trim();
+
+    let filteredBooks = books;
+
+    if (genreFilter && genreFilter !== "") {
+        filteredBooks = filteredBooks.filter(book => book.genre.toLowerCase() === genreFilter);
+    }
+
+    if (ratingFilter && ratingFilter !== "0") {
+        filteredBooks = filteredBooks.filter(book => book.rating === parseInt(ratingFilter));
+    }
+
+    if (maxPagesFilter && !isNaN(maxPagesFilter) && maxPagesFilter !== "") {
+        filteredBooks = filteredBooks.filter(book => book.pages <= parseInt(maxPagesFilter));
+    }
+
+    if (!genreFilter && ratingFilter === "0" && maxPagesFilter === "") {
+        filteredBooks = books;
+    }
+
+    
+
+    displayBooks(filteredBooks);
+}
+
 displayBooks(books)
+filterBtn.addEventListener("click", filterBooks)
+
+const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
